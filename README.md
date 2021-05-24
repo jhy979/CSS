@@ -262,4 +262,41 @@ div {
   }
   ```
   ❗️ 태그 없이도 속성,값으로 스타일을 적용시킬 태그들을찾을 수 있어요.
- 
+  
+  
+  ## 4. 스타일 상속
+  - class에 스타일을 적용하면 class 하위 요소까지 상속되어 적용됩니다.
+  ❗️ **글자/문자 관련 속성들이 대부분 상속됩니다.**<br>
+  ### 4-1) 강제 상속 
+  - css에서 attribute의 값을 inherit로 주면 됩니다.
+  - inherit을 주면 원래 안되는 width, height, .... 같은 속성들도 부모의 것을 그대로 가져 옵니다.
+  👇👇 부모 값이 바뀌면 따라서 바뀌어요.
+  ```css
+  .parent {
+  width: 300px;
+  height :400px;
+  background-color:orange;
+  }
+  .child {
+    width:100px;
+    height: inherit;
+    background-color : orange;
+  }
+  ```
+  
+  ## 5. 선택자 우선순위
+  - 어떤 CSS 속성을 먼저 적용을 해줘야할까요?
+  1. 점수 높은 선언부터!
+  2. 점수 같으면 마지막에 해석된 선언이 우선!<br>
+
+❗️❗️❗️ 우선순위 파악이 생각보다 어렵습니다!
+|속성|점수|코드|
+|:---:|:---:|:---|
+|!important|99999999점| ```css color : red !important ```
+|직접 명시 (inline 선언 방식)|1000점|```css <div  ```|
+|ID 선택자|100점|```css #color_yellow { ... }  ```|
+|class 선택자|10점|```css .div { ... } ```|
+|태그 선택자|1점|```css div { ...} |
+|전체 선택자|0점|*|
+|상속|0점|```css body {...} ```|
+![image](https://user-images.githubusercontent.com/32920566/119309432-43ec8100-bca9-11eb-9d66-96ad48355c65.png)
