@@ -155,7 +155,7 @@ div {
   
   > Active
   - **마우스를 클릭하고 있는 동안 변화**를 만들 수 있어요.
-    ```css
+  ```css
   a:active {
     color : red;
   }
@@ -183,3 +183,83 @@ div {
   - first-child 👉 형제 요소 중 첫째만 선택할건데
   - span 👉 span 태그를 가지는 친구여야하고
   - .fruit 띄어쓰기👉 fruit 클래스를 가지는 요소의 후손이여야해.
+  
+  > Last Child 
+  - first-child라 똑같지만 막내를 찾는 겁니다.
+  
+  > Nth Child 
+  - 비슷합니다.
+  ```css
+  .fruits *:nth-child(2){
+    color : red;
+  }
+  ```
+  👆👆 둘째를 찾을 건데 어떤 태그든 상관없이 fruits class의 후손이면 됨.
+   ```css
+  .fruits *:nth-child(2n){
+    color : red;
+  }
+  ```
+  👆👆 2번째, 4번째, ... 친구들을 찾을 겁니다.
+  
+  > 부정 선택자
+  - Not 사용
+  ```css
+  .fruits *:note(span){
+    color :red;
+  }
+  ```
+  👆👆 span 제외하고 fruits class 내 모든 태그들을 선택합니다.
+  
+  ### 3-4) 가상 요소 선택자
+  > Before
+  - 콜론이 두 개!
+  - before라는 가상의 요소를 만들어서 class 가 덮은 요소 앞에 삽입하는 선택자입니다.
+  ```css
+  .box::before {
+    content:"앞!";
+  }
+  ```
+  ```html
+  <div class="box">
+    뒤!
+  </div>
+  ```
+  👉 출력이 **뒤!** 가 아니라** 앞! 뒤!** 로나옵니다.
+  
+  > After
+  - 반대 개념이겠죠?
+  ```css
+  .box::after{
+    content: "";
+    display: block;
+    width :30px;
+    height :30px;
+    background :royalblue;
+  }
+  ```
+  - content는 필수로 써야합니다.
+  - inline 방식이라 width,hegiht,background가 적용이 안됩니다.
+  👉 ```css display: block; ```   속성을 추가하면 적용이 됩니다.
+  
+  ### 3-5) 속성 선택자
+  > 속성만으로 찾기
+  ```css
+  [disabled] {
+    color : red;
+  }
+  ```
+  - disabled 라는 속성을 가진 태그들을 선택합니다.
+   ```css
+  [type] {
+    color : red;
+  }
+  ```
+  - type 이라는 속성을 가진 태그들을 선택합니다.
+  > 속성= "값" 
+   [type="password"] {
+    color : red;
+  }
+  ```
+  ❗️ 태그 없이도 속성,값으로 스타일을 적용시킬 태그들을찾을 수 있어요.
+ 
