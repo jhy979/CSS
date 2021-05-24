@@ -299,4 +299,6 @@ div {
 |태그 선택자|1점|```css div { ...} |
 |전체 선택자|0점|*|
 |상속|0점|```css body {...} ```|
+<br>
+  
 ![image](https://user-images.githubusercontent.com/32920566/119309432-43ec8100-bca9-11eb-9d66-96ad48355c65.png)
