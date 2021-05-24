@@ -292,8 +292,8 @@ div {
 ❗️❗️❗️ 우선순위 파악이 생각보다 어렵습니다!
 |속성|점수|코드|
 |:---:|:---:|:---|
-|!important|99999999점| ```css color : red !important ```
-|직접 명시 (inline 선언 방식)|1000점|```css <div  ```|
+|!important|99999999점| ```css color : red !important ``` 이거도 적당히 씁시다. 초보들만 많이 써요.
+|직접 명시 (inline 선언 방식)|1000점|html 내부 선언 (피하는 게 좋아요 우선순위 너무 높아요 ㅠㅠ)|
 |ID 선택자|100점|```css #color_yellow { ... }  ```|
 |class 선택자|10점|```css .div { ... } ```|
 |태그 선택자|1점|```css div { ...} |
