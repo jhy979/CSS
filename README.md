@@ -302,3 +302,89 @@ div {
 <br>
   
 ![image](https://user-images.githubusercontent.com/32920566/119309432-43ec8100-bca9-11eb-9d66-96ad48355c65.png)
+  
+  
+  ## 6. 속성
+  |제어 가능한 속성|구현|
+  |:--:|:--|
+  |박스|가로세로 너비, 내부여백 가진 박스|
+  |글꼴, 문자|크기,두께|
+  |배경|배경 색상,이미지|
+  |배치|요소의 위치 조정|
+  |플렉스(정렬)|hmtl은 기본적으로 수직이지만, 수평 정렬 시 사용|
+  |전환|요소의 전과 후 상태를 애니메이션 처리|
+  |변환|요소를 회전, 이동, 크기 조절|
+  |띄움|요소를 공중으로 띄움(요소 주변으로 문자가 흐르도록 - 마치 신문기사에서 이미지 옆 글씨)|
+  |애니메이션|전환보다 더 복잡한 애니메이션|
+  |그리드|엑셀처럼 행과 열의 레이아웃을 만들 수 있음|
+  |다단|한컴에서의 단 나누기|
+  |필터|이미지 필터|
+  
+  ### 6-1) width, height
+  
+ 👉 기본값 : auto <br>
+ 👉 단위 : px, em, vw 등
+  
+  * 인라인 요소 (eg. span) : 가로 요소가 최대한 줄어들도록 하고 width, height 같은 레이아웃 작업은 불가능합니다. (이건 글자를 처리하기 위한 거예요!)<br>
+  * 블록 요소 (eg. div) : 가로 길이가 최대가 되도록
+  * max-width, max-height<br>
+  👉 최대 너비 제한<br>
+  👉 기본값 : none <br>
+  👉 단위 : p, em, vw 등<br>
+  * min-width, min-height<br>
+  👉 최대 너비 제한<br>
+  👉 기본값 : 0 <br>
+  👉 단위 : p, em, vw 등<br>
+  
+  |단위|내용|
+  |:---:|:---|
+  |em|해당 클래스에서의 글자 크기 == 1em|
+  |rem|root 기준의 글자 크기 == 1rem|
+  |vw|viewport의 가로|
+  |vh|viewport의 세로|
+  
+  
+  ❓ 0 px  0vw 뭐가 더 클까요? <br>
+  ❗️0은 다 같으므로 단위를 붙이지 마세요!<br>
+  
+  ### 6-2) margin
+  - 외부 여백 <br>
+ 👉 기본값 : 0 <br>
+ 👉 지정가능값 : auto (가운데 정렬입니다)<br>
+ 👉 단위 : px, em, vw 등
+  ```css
+    margin-bottom: 20px; /* 아래만 */
+    margin : 10px 20px; /* 위아래 10px 좌우 20px */
+    margin : 10px 20px 30px; /* 위 10px 좌우 20px 아래 40px */
+    margin : 10px 20px 30px 40px; /* 시계방향으로 */
+    margin : -20px 10px /* 음수로 두면 요소들이 겹쳐짐 */
+  ```
+  
+   ### 6-3) padding
+  
+  - 내부 여백<br>
+ 👉 기본값 : 0 <br>
+ 👉 단위 : px, em, vw 등
+  - margin 과 같은 순서로 값을 여러개 줄 수 있어요.
+  
+   ### 6-4) border 
+  - 순서대로 선-두께, 선-종류, 선-색상 <br>
+ 👉 기본값 : black <br>
+  
+  ``` css
+    border : 10px solid orange;
+  ```
+  1. border-width : medium thin thick 존재하지만 숫자로 씁시다. 위의 10px 처럼 숫자로! <br>
+  2. border-style : solid (실선) , dashed (파선), dotted (점선), ... <br>
+  3. border-color : 기본 black <br>
+  👉 색상은 색상이름(Black), Hex 색상코드 (#FFFFFF) RGB - rgb(255,255,255), RGBA - rgba(0,0,0,0.5)로 표현할 수 있어요. <br>
+  👉 border-top ,buttom, right, left 도 존재합니다. <br>
+  
+   ### 6-5) border-radius 
+  - border를 둥굴게
+ 👉 기본값 : 0 <br>
+  ```css
+    border-radius : 10px; /* 전체를 둥글게 */ 
+    border-radius : 0 10px 0 0; /* 오른쪽 상단만 둥글게 */
+  ```
+   ### 6-5) border-radius 
