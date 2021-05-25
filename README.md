@@ -387,4 +387,18 @@ div {
     border-radius : 10px; /* 전체를 둥글게 */ 
     border-radius : 0 10px 0 0; /* 오른쪽 상단만 둥글게 */
   ```
-   ### 6-5) border-radius 
+   ### 6-5) box-sizing
+  - 요소의 크기 계산 기준을 지정 <br>
+ 👉 기본값 : content-box / 요소의 내용만으로 크기를 계산 <br> 
+ 👉 입력 가능값 : border-box / 요소 내용 + padding + border 를 다 합쳐서 크기를 계산<br>
+  
+  ```css 
+      tem:first-child {
+        border: 4px solid red; /* 경계선 추가하면 원래 요소가 더 커짐 */
+        padding : 20px; /* 내부 패딩하면 요소가 더 커짐 */
+        box-sizing : border-box; /* 하지만 이때 border-box하면 원래 크기를 유지하면서 경계선과 padding을 진행함! */
+    }
+  ```
+  
+   ### 6-6) 
+  
