@@ -400,5 +400,45 @@ div {
     }
   ```
   
-   ### 6-6) 
+   ### 6-6) overflow
+  - 요소의 크기 이상으로 내용이 넘치면 넘친걸 어떻게 보여줄지 설정해요.
+ 👉 기본값 : visible / 넘쳐도 보여주세요 <br> 
+ 👉 입력 가능값 : hidden, scroll, auto / 이름만 봐도 느낌 오시죠?<br>
+  ![image](https://user-images.githubusercontent.com/32920566/120620141-a27ae180-c497-11eb-86ac-a55fff2e816f.png)<br>
+  ※ scroll은 가로 세로 축 무조건 만들어요 ㅠㅠ 그래서 그냥 auto로 자동적으로 스크롤바를 만들어주는게 일반적이예요<br>
+  - overflow-x : x축 넘치는 부분만 체크해요
+  - overflow-y : y축 넘치는 부분만 체크해요
   
+  
+ ### 6-7) display
+  - 화면 출력을 어떻게 보여줄지 결정해요.
+  
+  
+  |요소|설명|
+  |---|---|
+  |block|상자 요소|
+  |inline|글자 요소|
+  |inline-block|기본적으로 글자 + 상자 요소(가로 세로 지정이 가능해요)|
+  |flex|플렉스 박스 (1차원 레이아웃, 축 1개)|
+  |grid|그리드 (2차원 레이아웃, 축 2개)|
+  |none|보여짐 특성 없어요, 화면에서 사라져|
+  |기타|table, table-row, table-cell|
+  ```css
+  span{
+      width : 120px;
+      height : 30px;
+      background-color: royalblue;
+      color : white;
+      display : block;
+  }
+  ```
+  - 위처럼 inline값인 글씨를 block으로 만들어 가로, 세로 길이를 줄 수 있어요.
+  
+  ### 6-8) opacity
+  - 요소의 투명도를 결정합니다.
+ 👉 기본값 :1 / 완전 불투명 <br> 
+ 👉 입력 가능값: 0~1 / 조절하세용<br>
+  
+  
+  ### 6-9) 글꼴
+  |||
