@@ -483,3 +483,70 @@ div {
                                👉기본 :scroll 가능값 : fixed(스크롤은 움직이는데 이미지는 가만히 있어요. 뷰포트에 고정) */
     }
   ```
+
+   ### 6-11) 배치
+  - 요소의 위치는 반드시 반드시 **어떠한 기준을 잡고 설정해야 해요!**  
+  
+  
+  |속성|기능|구체적 내용|
+  |:---:|:---:|:---|
+  |position|요소의 위치를 지정|기본 : static / 가능값 : relative(요소 자신 기준), absolute(부모 요소 기준), fixed(뷰포트 기준), sticky(스크롤 영역 기준)|
+  |top bottom left right|위치 지정 |기본 : auto, 가능값 : 양수 음수|
+  
+  ❗️❗️  position : relavtive를 이용하는 배치는 거의 사용하지 않아요. 대부분 absolute 써요. 다른 요소들의 위치가 혼동이 올 수 있기 때문이예요.<br>
+  - position을 쓰면 동급 친구들과의 상호작용이 유지됩니다. absolute를 쓰면 동급 친구들과의 상호작용이 무너집니다.
+  - position : absolute를 쓰려면 위치상 부모 요소를 지정해줘야 해요. 따라서 구조 상에서 부모한테 position: relative를 써줘야해요. ( position : relavtive 는 대부분 이 때만 사용됩니다.)
+  - 개념이 헷갈릴 수 있어요. 부모를 계속 찾아간다고 생각하세요. 부모를 찾아갔는데 그 부모가 position : 값으로 지정이 되어있다면 사용가능하겠죠?<br>
+  ※ absolute(부모 요소 기준), fixed(뷰포트 기준)를 사용하면 display :block이 기본적으로 적용됩니다.<br><br>
+  ❗️❗️ 요소 쌓임 순서
+  - 어떤 요소가 더 위에 보일지 결정하는 방식입니다.
+  1. 요소에 position 속성이 있으면 더 위에 쌓여요. 
+  2. z-index 속성의 숫자가 높을수록 위에 쌓여요.
+  3. HTML의 구조로 볼 때 나중에 써질수록 위에 쌓여요.
+  👇👇👇 아래 예시로 확인해봅시당.
+  ```css
+  .container .item:nth-child(1){
+  width : 100px;
+  height : 100px;
+  position : relative;
+  z-index : 1;         /*기본 0 이고 -1까지도 사용합니다. 귀찮다고 999 입력하면 관리가 어려워요! 코딩할때부터 잘 관리해서 써주세요.*/
+}
+.container .item:nth-child(2){
+  width : 100px;
+  height : 100px;
+  position : absolute;
+  top : 50px;
+  left: 50px;
+  z-index : 2; 
+  
+}
+.container .item:nth-child(3){
+  width : 100px;
+  height : 100px;
+  z-index : 3;
+}
+```
+  ![image](https://user-images.githubusercontent.com/32920566/120648810-03fe7880-c4b7-11eb-8642-e91860a89b20.png)
+<br><br>
+### 6-12) 정렬 (flex)
+  - 수평, 수직 정렬을 위해 사용합니다.
+  - 부모 요소에 ``` dispaly : flex; ``` 주면 child들이 수평정렬 됩니다. 그러면, 부모를 flex container라고 부르고 child들을  flex items라고 부릅니다.
+  ```css
+    body {
+      display : flex; /* inline-flex, inline, block을 넣을 수 있어요. */
+    }
+  ```
+  -
+  
+  |부모요소 속성|기능|자세히|
+  |:---:|:---:|:---|
+  |flex-direction|주축 설정|``` row(수평), row-reverse, column(수직), column-reverse ```|
+  |justify-content|주축의 정렬 방법(수평정렬 느낌)|```기본:flex-start 가능값:flex-end,center```|
+  |align-content|교차 축의 여러 줄 정렬 방법(수직정렬 느낌)|```기본:stretch 가능값:flex-start,flex-end,center```<br>stretch는 부모 container를 꽉 채우면서 정렬, flex-start는 child들이 다닥다닥 붙게 모두 start를 기준으로 정렬합니다.|
+  ||||
+  ||||
+  ||||
+  
+  |자식요소 속성|기능|자세히|
+  |:---:|:---:|:---|
+  |flex-wrap|자식요소 줄바꿀까 말까|``` 기본:no-wrap, wrap``` no-wrap은 한줄에서 다하려고해서 찌그러지고 wrap은 넘치면 줄바꿈해줘요.|
