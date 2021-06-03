@@ -442,4 +442,44 @@ div {
   
   
   ### 6-9) 글꼴
-  |||
+  
+  
+  |속성|기능|구체적 내용|
+  |:---:|:---:|:---|
+  |font-size|글꼴 크기|기본적으로 16px|
+  |font-weight|두께|700(bold), normal(400) 100~900으로 조절 가능합니다.|
+  |font-style|글꼴 기울임|italic|
+  |font-family|글꼴|글꼴1,글꼴2..... 글꼴계열 : 여러 후보 작성 가능, 앞의 후보부터 시도해보고 안되면 글꼴계열을 사용합니다. (글꼴 이름에 띄어쓰기 있으면 ""로 묶어주세요 아니면 다 ""로 묶는 습관 들여도 괜찮아요)<br> sans-serif : 고딕체 계열로 웹에서 대부분 씁니다. 따라서 글꼴계열로 작성하세요. |
+  |line-weight|상하 장평|기본적으로 normal(1) eg) 1.4는 글꼴 크기의 1.4배가 높이가 됩니다. 뭔가 상하좌우 여백을 맞춰 정렬하려는 느낌이 있어요.|
+  |text-decoration|문자 장식(선 긋기)|none, underline, overline, line-through|
+  |text-align|정렬|left,right,center,justify(양쪽 정렬)|
+  |color|글 생삭|rgb(0,0,0)이 기본값
+  |text-indent|들여쓰기,내어쓰기|50px, -50px|
+  
+  
+  ### 6-10) 배경
+  ```css
+    div {
+      width : 200px;
+  
+      height : 100px;
+  
+      background-color : orange; /*이미지 색상 👉기본 transparent*/ 
+  
+      background-image : url("경로"); /*배경 이미지, 안전하게 따옴표를 써줍시다.*/
+  
+      background-size : 200px; /*이미지 가로 세로 크기 , 가로 세로 둘 다 작성할 수 있지만 가로만 쓰면 비율 조절 알아서 해줘요.
+                                👉기본 : auto  가능값: cover(더 넓은범위에 맞춰서 짤림)contain(더 작은거에 맞춰서 안짤림), 단위 */
+  
+      background-repeat : no-repeat; /*기본적으로 이미지가 요소 크기에 맞추어 반복되어 나오므로 그걸 방지
+                                       👉repeat, no-repeat, repeat-x, repeat-y사용 가능*/
+  
+      background-position : top right; /*이미지를 요소에 맞추어 정렬
+                                        👉기본 : 0% 0%   방향 : top,bottom,center,right,left   단위 : px,em,rem*/
+  
+      background-position : 100px 30px; /*단위로도 사용가능*/
+  
+      background=attachment : /*배경 이미지 스크롤 특성 지정
+                               👉기본 :scroll 가능값 : fixed(스크롤은 움직이는데 이미지는 가만히 있어요. 뷰포트에 고정) */
+    }
+  ```
