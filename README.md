@@ -273,6 +273,7 @@ div {
   - css에서 attribute의 값을 inherit로 주면 됩니다.
   - inherit을 주면 원래 안되는 width, height, .... 같은 속성들도 부모의 것을 그대로 가져 옵니다.
   👇👇 부모 값이 바뀌면 따라서 바뀌어요.
+  
   ```css
   .parent {
   width: 300px;
@@ -284,7 +285,7 @@ div {
     height: inherit;
     background-color : orange;
   }
-  
+  ```
   
   ## 5. 선택자 우선순위
   - 어떤 CSS 속성을 먼저 적용을 해줘야할까요?
@@ -298,7 +299,7 @@ div {
 |직접 명시 (inline 선언 방식)|1000점|html 내부 선언 (피하는 게 좋아요 우선순위 너무 높아요 ㅠㅠ)|
 |ID 선택자|100점|```css #color_yellow { ... }  ```|
 |class 선택자|10점|```css .div { ... } ```|
-|태그 선택자|1점|```css div { ...} |
+|태그 선택자|1점|```css div { ...} ```|
 |전체 선택자|0점|*|
 |상속|0점|```css body {...} ```|
 <br>
@@ -555,6 +556,9 @@ div {
   |flex-basis|flex-grow를 위한 기준,기본 너비|```기본:auto(content(글자) 너비)  가능값: 0 ``` 0으로 설정하면 눈으로 봤을 때 레이아웃이 정말 제가 원하는 기준만큼 나뉩니다.|
   |order|flex item의 순서|```기본:0 (순서없음) 가능값 : 숫자``` 숫자가 작을수록 먼저 나와요. html구조 안바꿔도 원하는대로 출력할 수 있어요.|
   
+  
+  ![image](https://user-images.githubusercontent.com/32920566/120892266-66d34980-c648-11eb-80af-ce9fa05f8378.png)<br><br>
+  ![image](https://user-images.githubusercontent.com/32920566/120892270-6dfa5780-c648-11eb-833d-516c6809bc9f.png)<br><br>
   👉 flex를 가로라고 생각하세요 align을 세로라고 생각하세요. 여러 줄이면 align-content 한 줄이면 align-items 사용하면 됩니다.오키??<br>
   
    ### 6-13) 전환
