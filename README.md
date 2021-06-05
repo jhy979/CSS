@@ -261,7 +261,8 @@ div {
    [type="password"] {
     color : red;
   }
-  ```
+  
+  
   ❗️ 태그 없이도 속성,값으로 스타일을 적용시킬 태그들을찾을 수 있어요.
   
   
@@ -283,7 +284,7 @@ div {
     height: inherit;
     background-color : orange;
   }
-  ```
+  
   
   ## 5. 선택자 우선순위
   - 어떤 CSS 속성을 먼저 적용을 해줘야할까요?
